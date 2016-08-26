@@ -65,7 +65,7 @@
 
     SliderBox.prototype.enableTransition = function() {
         if (this.element != null) {
-            this.element.css(prefixStyle('transition'), "left 0.2s linear 0s").css('left','0px');
+            this.element.css(prefixStyle('transition'), "left 0.2s linear 0s");
         }
         return this;
     };
