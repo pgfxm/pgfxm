@@ -37,7 +37,7 @@ var index = {
         $('.index_float_callback').on('click',function(e){
             var posY = self.getScroll().t;
             window.requestAnimationFrame(function(t){
-                posY -= 100;
+                posY -= 50;
                 window.scrollTo(0,Math.max(0,posY));
                 if(posY>0){
                     window.requestAnimationFrame(arguments.callee);
