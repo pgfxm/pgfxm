@@ -18,6 +18,8 @@ var pageObj = {
             }else{
                 $(this).parent().parent().append($('.hfh-text').fadeIn());
             }
+            $(this).parent().parent().find('.hfh-text textarea').trigger('focus');
+            scrollTo(0,$(this).parent().parent().find('.hfh-text').offset().top);
         });
         $('#detail-info-btn1').on('click', function(e){
             dialog.floatDivTip('加入购物车成功！');

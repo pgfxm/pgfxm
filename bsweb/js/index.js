@@ -21,7 +21,7 @@ var index = {
 
         $('#index-sdjx-nrid dl').click(function () {
             $("#index-shaidantc").fadeIn();
-            $('html,body').animate({scrollTop:0},0);
+            //$('html,body').animate({scrollTop:0},0);
             $('html,body').css({height:'100%', overflow:'hidden'})
         });
         $(".index-shaidantc-close").click(function () {
