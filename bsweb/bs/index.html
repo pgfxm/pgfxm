@@ -12,7 +12,7 @@
     <div class="nav-log"></div>
     <ul class="nav-ul">
         <li class="nav-ul-color"><a href="javascript:;">首页</a></li>
-        <li class="J-menu-all-bt"><a href="#">全作品</a></li>
+        <li><a href="#">全作品</a></li>
         <li><a href="me.html">我</a></li>
         <li class="nav-ul-shop" id="nav-ul-shop"><b class="nav-sl">11</b><span>|</span><a href="#"><img src="images/nav-shop.png"></a>
             <ul class="nav-shopnr">
@@ -30,17 +30,22 @@
 </header>
 <!--轮播图-->
 <div class="index-visual">
-    <ul class="index-main-image">
-        <li><a href="#" ><img src="images/index-lb.jpg"></a></li>
-        <li><a href="#"><img src="https://si.geilicdn.com/160825103110tuangou.jpg"></a></li>
-        <li><a href="#"><img src="images/index-lb.jpg"></a></li>
-    </ul>
     <div class="flicking-con">
+        <p>
+            <a href="#" class="on">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+        </p>
+    </div>
+    <div class="index-main-image">
         <ul>
-            <li class="light"></li>
-            <li></li>
-            <li></li>
+            <li><a href="#" ><img src="images/index-lb.jpg"></a></li>
+            <li><a href="#"><img src="images/index-lb.jpg"></a></li>
+            <li><a href="#"><img src="images/index-lb.jpg"></a></li>
+
         </ul>
+
     </div>
 </div>
 <!--轮播图end-->
@@ -197,7 +202,7 @@
 <!--悬浮-->
 <div class="index_float">
     <a href="#" class="index_float_kf"></a>
-    <a href="javascript:void(0);" class="index_float_callback"></a>
+    <a href="#" class="index_float_callback"></a>
 </div>
 <!--晒单弹窗-->
 <div class="index-shaidantc" id="index-shaidantc">
@@ -249,7 +254,20 @@
 </div>
 </body>
 </html>
-<script src="js/zepto.js"></script>
-<script src="js/sliderBox.js"></script>
-<script src="js/public.js"></script>
-<script src="js/index.js"></script>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/top.js"></script>
+<script>
+    $(function () {
+        var oDl=$('#index-sdjx-nrid dl');
+            oDl.click(function () {
+                $("#index-shaidantc").show();
+                $('html,body').animate({scrollTop:0},0);
+                $('html,body').css({height:'100%', overflow:'hidden'})
+            });
+        $(".index-shaidantc-close").click(function () {
+            $("#index-shaidantc").hide();
+            $('html,body').css('overflow','visible' )
+        });
+    });
+
+</script>

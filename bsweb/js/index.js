@@ -1,32 +1,6 @@
-(function() {
-    var lastTime = 0;
-    var vendors = ['ms', 'moz', 'webkit', 'o'];
-    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
-    }
-    if (!window.requestAnimationFrame) {
-        window.requestAnimationFrame = function(callback, element) {
-            var currTime = new Date().getTime();
-            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
-            lastTime = currTime + timeToCall;
-            return id;
-        };
-    }
-    if (!window.cancelAnimationFrame) {
-        window.cancelAnimationFrame = function(id) {
-            clearTimeout(id);
-        };
-    }
-})();
-
 var index = {
     bindEvent:function(){
         var self = this;
-        $('.J-menu-all-bt').on('click', function(){
-            $('.nav-shopnr').fadeToggle();
-        });
         $(window).on('scroll',function(){
             if(self.getScroll().t>100){
                 $('.index_float_callback').css('display','inline-block');
@@ -44,6 +18,17 @@ var index = {
                 }
             })
         });
+
+        $('#index-sdjx-nrid dl').click(function () {
+            $("#index-shaidantc").fadeIn();
+            $('html,body').animate({scrollTop:0},0);
+            $('html,body').css({height:'100%', overflow:'hidden'})
+        });
+        $(".index-shaidantc-close").click(function () {
+            $("#index-shaidantc").fadeOut();
+            $('html,body').css('overflow','visible' )
+        });
+
     },
     getScroll:function () {
         var o = document.documentElement,
@@ -82,6 +67,7 @@ var index = {
                 thumbs: tbLi
             }),
             slider = new TouchPanel({
+                infinate:true,
                 touchPanel: obj,
                 sliderBox: sliderBoxObj
             });
