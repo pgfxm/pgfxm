@@ -20,10 +20,14 @@ var pageObj = {
             $('#shaidan-selecttc ul[cid="'+cid+'"]').show();
         });
         $('.shaidan-xztc-ul li').on('click',function(e){
-            var cid = $(this.parentNode).attr('cid');
+            var cid = $(this.parentNode).attr('cid'),
+                img = $(this).find('img').attr('src'),
+                title = $(this).attr('title'),
+                desc = $(this).attr('desc');
             $('#shaidan-selecttc').fadeOut();
             $('#shaidan-selecttc ul[cid="'+cid+'"]').hide();
-
+            $('#select-bt').html('<img src="'+img+'"><p class="shaidan-xz-p">'+title+'</p>');
+            $('#desc').val(desc);
         });
 
         $('.shaidan-banner-sdfl').on('click',function(e){//全选
