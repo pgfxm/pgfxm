@@ -23,6 +23,7 @@
     }
     showTip.prototype = {
         setMessage: function(msg){
+            this.tipContentTitleBox = null;
             this.tipContentBox.html(msg);
             return this;
         },
@@ -102,46 +103,30 @@
 
         return alertTip;
     }
-    dialog.confirm = function(msg, ok_text, cannel_text, succ, faill ){
-        if(!msg)return;
-        if($.isFunction(ok_text)){
-            succ = ok_text;
-            ok_text = null;
-        }else{
-            if(ok_text===null)ok_text = '';
-        }
-        if($.isFunction(cannel_text)){
-            if(!succ){
-                succ = cannel_text;
-            }else{
-                if(ok_text===null){
-                    faill = cannel_text;
-                }else{
-                    faill = succ;
-                    succ = cannel_text;
-                }
-            }
-            cannel_text = null;
-        }
+    dialog.confirm = function(opts){
+        if(!opts || !opts.msg)return;
 
-        ok_text = ok_text || '确定';
-        cannel_text = cannel_text || '取消';
-        succ = succ || function(){};
-        faill = faill || function(){};
+        var ok_text = opts.ok_text || '确定',
+        cannel_text = opts.cannel_text || '取消',
+        succ = opts.succ || function(){},
+        faill = opts.faill || function(){};
 
-        msg = '<p>'+msg+'</p><div class="bt-box"> <button>'+cannel_text+'</button> <button>'+ok_text+'</button></div>';
+        msg = '<p>'+opts.msg+'</p><div class="bt-box"> <button>'+cannel_text+'</button> <button>'+ok_text+'</button></div>';
         if(!confirmTip){
             confirmTip = new showTip({
                 tipBoxStyle:'confirm-tip',
-                tipContentStyle:'confirm-text',
+                tipContentStyle:opts.contentStyle || 'confirm-text',
                 tipContent:msg
             });
-
         }else{
             confirmTip.tipBox.find('button').unbind('click');
             confirmTip.setMessage(msg);
         }
         confirmTip.show();
+        confirmTip.showMask();
+        if(opts.title){
+            confirmTip.setTitle(opts.title);
+        }
         confirmTip.tipBox.find('button:last-child').bind('click', function(){
             succ.call(this);
             confirmTip.hide();
