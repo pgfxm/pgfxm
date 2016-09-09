@@ -286,6 +286,7 @@
     left: 0;
     z-index: 111;
 }
+
 .user-pl{overflow: hidden;margin-top:5px;}
 /*评论*/
 .user-pl-dl{overflow: hidden;margin-top: 25px;}
@@ -480,6 +481,11 @@
     background: url(../images/shop-select.png) no-repeat #fff;
     background-size: 22px 22px;
     border: none;
+    display: block;
+
+}
+.shop-shdz-xx .shop-selec {
+    display: none;
 }
 /*确认订单 样式大部分沿用我的订单*/
 .qrdd-box,.qrdd-list,.qrdd-bzxx{background: #fff;overflow: hidden;margin-bottom: 20px;}
@@ -546,7 +552,16 @@
     box-sizing: border-box;
     color: #3d3d3d;font-size: 13px;}
 .shaidan-tp{overflow: hidden;margin-top: 12px;}
-.shaidan-tpa{display: inline-block;width: 78px;height: 78px;background:url("../images/shaidan-img-photo.png")  center 23% no-repeat #f7f7f7;border: 1px solid #ebebeb;background-size: 30px 30px;color:#afb2ba;text-align: center;float: left;margin-right: 8px;}
+.shaidan-tpa{display: inline-block;width: 78px;height: 78px;background:url("../images/shaidan-img-photo.png")  center 23% no-repeat #f7f7f7;border: 1px solid #ebebeb;background-size: 30px 30px;color:#afb2ba;text-align: center;float: left;margin-right: 8px;position: relative;}
+.shaidan-tpa .sd-upimg{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 0;
+    opacity: 0;
+    left: 0;
+    z-index: 111;
+}
 .shaidan-tpa span{display:inline-block;margin-top: 58%;}
 .shaidan-tp img{float: left;width: 80px;height: 80px;margin-right: 8px;    margin-bottom: 8px;}
 .shaidan-fabiao{width: 100%;text-align: center;overflow: hidden;margin-top: 60px;}
@@ -555,9 +570,9 @@
 #shaidan-selecttc{display:none;}
 #shaidan-xltc{display:none;}
 #shaidan-dy-tc{display:none;}
-.shaidan-xztc{width: 100%;height: 100%;position:absolute;left:0;top:0;background:rgba(0, 0, 0, 0.57) none repeat scroll 0 0 !important;}
+.shaidan-xztc{width: 100%;height: 100%;position:fixed;left:0;top:0;background:rgba(0, 0, 0, 0.57) none repeat scroll 0 0 !important;}
 .shaidan-xztc-close{display: inline-block;width:20px;height:20px;background: url("../images/tc-close.png") no-repeat;background-size: 20px 20px;position: absolute;top:2.5%;right:3%;}
-.shaidan-xztc-ul{overflow: hidden;margin-bottom: 3%;}
+.shaidan-xztc-ul{overflow: hidden;margin-bottom: 3%;display: none;}
 .shaidan-xztc-ul li{width: 30.3%;height: 112px;
     float: left;
     margin-left: 2.3%;margin-top: 3%;}

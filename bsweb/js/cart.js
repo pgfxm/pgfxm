@@ -60,14 +60,20 @@ var pageObj = {
             }
             numObj.html(++num);
         });
-        $('.shdz-top-new').on('click', function(e){
-            addressObj.show(function(data){//新增地址回调函数 data 为 {province:'xx',city:'xx',area:'xx',name:'xx','emscode':'xx',address:'xx'}
-                if(data.province<1){
-                    dialog.floatDivTip('请选择省份');
-                    return false;//返回false可以阻止窗口消失
-                }
+        $('.shdz-top-new').on('click', function(e){//新增地址
+            //show 可接受二个参数，参1：data为表单初始数据，（可选参数，编辑地址的时候可用）;参2：为点击确定按钮后的回调函数
+            addressObj.show({provinceId:'130000',cityId:'130400',areaId:'130404',name:'张三','emscode':'100101',address:'中关村理想国际大厦'},function(data){//新增地址回调函数 data 为 {province:{value:'130000',text:'xxx'},city:{value:'130000',text:'xxx'},area:{value:'130000',text:'xxx'},name:'xx','emscode':'xx',address:'xx'}
+
+                //后端同学可以在这里通过ajax把data保存到库里
+                var address = data.province.text+data.city.text+data.area.text+data.address;
+                $('<dl class="font-Light shop-shdz-xx"> <dt> <h4 class="shop-shdz-add">'+address+'</h4> <p><span>'+data.name+'</span><span>'+data.emscode+'</span></p> </dt> <dd> <label for="checkbox2" addrId="" class="shop-allselectno shop-selec"></label> </dd> </dl>').appendTo('#addr-list');
             });
         });
+        $('#addr-list').on('click', 'dl', function(e){//选择地址
+            if($(this).find('.shop-selec').hasClass('shop-allselect'))return;
+            $('#addr-list .shop-allselect').removeClass('shop-allselect');
+            $(this).find('.shop-selec').addClass('shop-allselect');
+        })
     },
     init:function(){
         this.bindEvent();

@@ -32,7 +32,7 @@
     <form>
         <h3 class="font-Light me-shaidan-title">晒出你的北山生活</h3>
         <p class="me-shaidan-fb">获得最多5%全场优惠劵</p>
-        <div class="shaidan-xz">
+        <div class="shaidan-xz" id="select-bt">
             <p class="shaidan-xz-p">请选择你要晒单的包包</p>
         </div>
         <!--选择之后的样式-->
@@ -43,7 +43,7 @@
             <textarea placeholder="晒出你的北山生活......" name="body" ng-model="body" class="font-Light shaidan-textnr font-Light"></textarea>
         </div>
         <div class="shaidan-tp">
-            <a href="javascript:;" class="font-Light shaidan-tpa" id="shaidan-tpbtn"><span>添加图片</span></a>
+            <a href="javascript:;" class="font-Light shaidan-tpa" id="shaidan-tpbtn"><span>添加图片</span><input type="file" class="sd-upimg" name="file" index="0" multiple="multiple" accept="image/*"></a>
             <img src="images/parameter.jpg"><img src="images/parameter.jpg">
         </div>
         <div class="shaidan-fabiao">
@@ -55,7 +55,17 @@
 <div class="shaidan-xztc" id="shaidan-selecttc">
     <span class="index-shaidantc-close" id="shaidan-selecttc-close"></span>
     <div class="index-shaidantc-box">
-        <ul class="shaidan-xztc-ul">
+        <ul cid="1" class="shaidan-xztc-ul">
+            <li><img src="images/detail-spxz.jpg"></li>
+            <li><img src="images/detail-spxz.jpg"></li>
+            <li><img src="images/detail-spxz.jpg"></li>
+            <li><img src="images/detail-spxz.jpg"></li>
+            <li><img src="images/detail-spxz.jpg"></li>
+            <li><img src="images/detail-spxz.jpg"></li>
+            <li><img src="images/detail-spxz.jpg"></li>
+            <li><img src="images/detail-spxz.jpg"></li>
+        </ul>
+        <ul cid="2" class="shaidan-xztc-ul">
             <li><img src="images/detail-spxz.jpg"></li>
             <li><img src="images/detail-spxz.jpg"></li>
             <li><img src="images/detail-spxz.jpg"></li>
@@ -72,8 +82,8 @@
     <span class="index-shaidantc-close" id="shaidan-xltc-close"></span>
     <div class="index-shaidantc-box">
         <ul class="shaidan-xltc-ul">
-            <li>白系列</li>
-            <li>指导系列</li>
+            <li cid="1">白系列</li>
+            <li cid="2">指导系列</li>
             <li>白系列</li>
             <li>指导系列</li>
             <li>白系列</li>
@@ -86,3 +96,7 @@
 </div>
 </body>
 </html>
+<script src="js/zepto.js"></script>
+<script src="js/showTip.js"></script>
+<script src="js/public.js"></script>
+<script src="js/shaidan.js"></script>
