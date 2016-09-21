@@ -21,3 +21,177 @@ p{letter-spacing:1px;font-family:"PinFangSC-Light","Microsoft YaHei"; }
 .bgcolor{background: #f0f0f0;}
 .btn-max{width: 100%;}
 input{font-family:"PinFangSC-Regular","Microsoft YaHei";}
+
+
+/**loading*/
+.bg-black-loading {
+    background-color: rgba(0,0,0,0.4);
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 99;
+    max-width: 640px;
+    top:0;
+    bottom: 0;
+}
+.loadingBox {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    text-align: center;
+}
+.loadingBox img{
+    width: 30px;
+}
+
+.err-tip{
+    width: 100%;
+    font-size:0.8rem;
+    color: #666;
+    position: fixed;
+    top: 40%;
+    z-index: 111111;
+}
+.err-text{
+    padding: 8px 5px;
+    line-height: 25px;
+    text-align: center;
+    width: 60%;
+    background: rgba(0,0,0,0.6);
+    margin: 0 auto;
+    color:#fff;
+    border-radius: 5px;
+}
+.tip-loading{
+    margin: 5px auto;
+}
+.alert-tip,.confirm-tip{
+    width: 100%;
+    position: fixed;
+    top: 30%;
+    z-index: 111111;
+}
+
+.alert-text{
+    width: 60%;
+    font-size:0.8rem;
+    color: #000;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #c2c2c2;
+    margin: 0 auto;
+    background: #ffffff;
+}
+.alert-tip h1{
+    margin-top: 10px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-size:0.8rem;
+}
+.alert-tip p{
+    line-height: 28px;
+    padding: 10px 30px;
+    border-bottom: 1px solid #f2f2f2;
+    min-height: 50px;
+}
+.alert-tip button{
+    margin: 10px auto;
+    height: 25px;
+    width: 50px;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    background: #fff;
+
+}
+
+.confirm-text, .confirm-body{
+    font-size: 15px;
+    font-family: "PinFangSC-Regular","Microsoft YaHei";
+    width: 90%;
+    color: #000;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+    background: #ffffff;
+    overflow: hidden;
+}
+.confirm-body{
+    font-size: 12px;
+    color: #808080;
+    letter-spacing: 1px;
+}
+.confirm-body h1{
+    margin: 30px auto 10px;
+    font-size: 15px;
+    color: #3d3d3d;
+}
+.confirm-tip p{
+    font-size: 0.8rem;
+    line-height: 20px;
+    padding:30px 15px 25px;
+
+    color: #3d3d3d;
+}
+.confirm-body p{
+    padding-top: 0px;
+    text-align: left;
+}
+
+.confirm-tip button{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 34px;
+    line-height: 32px;
+    padding: 0;
+    width: 40%;
+    font-size:0.75rem;
+    border: 0;
+    float: left;
+    border: 1px solid #be8a3a;
+    background: #be8a3a;
+    color: #fff;
+    margin: 0 7%;
+}
+.confirm-tip .bt-box{
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+.confirm-tip button:first-child{
+    background: #fff;
+    border: 1px solid #be8a3a;
+    color: #be8a3a;
+    margin-right: 0%;
+}
+.confirm-tip button:last-child{
+    margin-left: 6%;
+}
+
+.guide-tip{
+    width: 100%;
+    font-size: 0.8rem;
+    color: #666;
+    position: fixed;
+    top: 0;
+    z-index: 199;
+
+}
+.guide-text{
+    width: 100%;
+    border: 0;
+    margin: 0 auto;
+}
+.guide-text img{
+    float: right;
+    width:35%;
+    margin-right: 10%;
+}
+.guide-text p{
+    width: 100%;
+    text-align: center;
+    font-size:0.7rem;
+    clear: both;
+    color: #fff;
+
+}

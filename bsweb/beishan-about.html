@@ -12,7 +12,7 @@
     <div class="nav-log"></div>
     <ul class="nav-ul">
         <li class="nav-ul-color"><a href="javascript:;">首页</a></li>
-        <li><a href="#">全作品</a></li>
+        <li class="J-menu-all-bt"><a href="#">全作品</a></li>
         <li><a href="me.html">我</a></li>
         <li class="nav-ul-shop" id="nav-ul-shop"><b class="nav-sl">11</b><span>|</span><a href="#"><img src="images/nav-shop.png"></a>
             <ul class="nav-shopnr">
@@ -164,10 +164,10 @@
         $('.about-nav-ul li a').click(function(event){
             $(this).parent().addClass("about-nav-licolor").siblings().removeClass('about-nav-licolor');
             event.preventDefault();
-            console.log($('#about').offset().top)
+            console.log($('#about').offset().top);
             $('html, body').animate({scrollTop: $($(this).attr('href')).offset().top - 100}, 500);
         })
-    })
+    });
     /*产品详情页头部导航*/
     $(window).scroll(function(){
         if($(document).scrollTop() >50){

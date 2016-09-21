@@ -12,7 +12,7 @@
     <div class="nav-log"></div>
     <ul class="nav-ul">
         <li ><a href="index.html">首页</a></li>
-        <li><a href="#">全作品</a></li>
+        <li class="J-menu-all-bt"><a href="#">全作品</a></li>
         <li class="nav-ul-color"><a href="javascript:;">我</a></li>
         <li class="nav-ul-shop" id="nav-ul-shop"><b class="nav-sl">11</b><span>|</span><a href="#"><img src="images/nav-shop.png"></a>
             <ul class="nav-shopnr">
@@ -32,21 +32,21 @@
     <dl class="zizliao-top-dl">
         <dt><img src="images/index-sd.jpg"></dt>
         <dd>
-            <span>黄药师</span>
+            <span><input id="username" readonly type="text" value="黄药师" class="ziliao-username"/></span>
             <span class="avatar-ipone">12345678901</span>
         </dd>
     </dl>
-    <a href="#" class="zizliao-top-a"></a>
+    <a href="#" class="zizliao-top-a" id="ziliao-usernamexg"></a>
 </div>
 <h3 class="font-Light ziliao-title">
     <span>账号绑定</span>
 </h3>
 <ul class="font-Light ziliao-zhbd">
-    <li><span>手机号</span><span class="ziliao-zhbd-iphone">12345678912</span></li>
-    <li><a href="#">邮箱<b class="ziliao-list-b">未绑定</b></a></li>
+    <li><span>手机号</span><span class="ziliao-zhbd-iphone"><input id="telephone" readonly type="text" value="142422342343" class="ziliao-username"/></span></li>
+    <li id="email"><a href="#">邮箱<b class="ziliao-list-b">未绑定</b></a></li>
 </ul>
 <h3 class="font-Light ziliao-title">
-    <span>常用收货地址</span><a href="JavaScript:;" class="ziliao-add" id="ziliao-newadd">新增地址</a>
+    <span>收货地址</span><a href="JavaScript:;" class="ziliao-add" id="ziliao-newadd">新增地址</a>
 </h3>
 <ul class="ziliao-addlist">
     <li>
@@ -157,5 +157,31 @@
     </div>
 </div>
 <!--修改地址弹窗end-->
+<!--修改邮箱弹窗-->
+<div class="new-addtc"  id="xgemail">
+    <span class="new-addtc-close"></span>
+    <div class="new-addtc-box">
+        <div class="xgemail-input"><input type="text" class="add-input" id="xg-email" placeholder="请输入邮箱" value="123456@qq.com"/></div>
+        <div class="xiugai-btn">
+            <input type="button" value="取消" class="xiugai-left-inp" id="bdyx-qx">
+            <input type="button" value="保存" class="xiugai-right-inp" id="bdyx-bc">
+        </div>
+    </div>
+</div>
+<!--修改邮箱弹窗end-->
+<!--绑定邮箱弹窗-->
+<div class="new-addtc"  id="bdemail">
+    <span class="new-addtc-close"></span>
+    <div class="new-addtc-box">
+        <div class="xgemail-input"><input type="text" class="add-input" id="add-email" placeholder="请输入邮箱"/></div>
+        <div class="bdyx-btn"><input type="button" value="添加" class="bdemail-inp" id="bdemail-btn"></div>
+    </div>
+</div>
+<!--绑定邮箱弹窗end-->
 </body>
 </html>
+<script src="js/zepto.js"></script>
+<script src="js/showTip.js"></script>
+<script src="js/public.js"></script>
+<script src="js/addAddress.js"></script>
+<script src="js/cart.js"></script>

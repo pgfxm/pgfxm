@@ -45,6 +45,8 @@ var pageObj = {
             }
             location.href = 'me-shop-qrdd.html';
         });
+
+        //购物车编辑
         $('.me-bjlb-prev').on('click', function(e){
             var numObj = $(this).parent().find('.J_num'),
                 num = numObj.text();
@@ -60,7 +62,8 @@ var pageObj = {
             }
             numObj.html(++num);
         });
-        $('.shdz-top-new').on('click', function(e){//新增地址
+
+        $('#ziliao-newadd,.shdz-top-new').on('click', function(e){//新增地址
             //show 可接受二个参数，参1：data为表单初始数据，（可选参数，编辑地址的时候可用）;参2：为点击确定按钮后的回调函数
             addressObj.show({provinceId:'130000',cityId:'130400',areaId:'130404',name:'张三','emscode':'100101',address:'中关村理想国际大厦'},function(data){//新增地址回调函数 data 为 {province:{value:'130000',text:'xxx'},city:{value:'130000',text:'xxx'},area:{value:'130000',text:'xxx'},name:'xx','emscode':'xx',address:'xx'}
 
@@ -73,7 +76,54 @@ var pageObj = {
             if($(this).find('.shop-selec').hasClass('shop-allselect'))return;
             $('#addr-list .shop-allselect').removeClass('shop-allselect');
             $(this).find('.shop-selec').addClass('shop-allselect');
+        });
+
+        $('#email').on('click', function(e){
+            $('#bdemail').fadeIn();
+        });
+        $('#bdemail .new-addtc-close').on('click',function(e){
+            $('#bdemail').fadeOut();
+        });
+        $('#bdemail-btn').on('click',function(e){
+            var email = $('#add-email').val();
+            if(!email){
+                dialog.floatDivTip('邮箱不能为空');
+                return false;
+            }
+            //后端在这增加保存email的操作
+            dialog.floatDivTip('保存成功');
+
+        });
+
+        $('#telephone').on('click',function(e){
+            $('#username').removeClass('ziliao-username-edit').attr('readonly','true');
+            $(this).removeAttr('readonly').addClass('ziliao-username-edit');
+            $(this).trigger('focus');
+            e.preventDefault();
+            e.stopPropagation();
+        });
+        $('#telephone').on('blur', function(e){
+            //后端在这增加保存手机号的操作
+            dialog.floatDivTip('保存成功');
         })
+
+        $('#ziliao-usernamexg').on('click', function(e){
+            $('#telephone').removeClass('ziliao-username-edit').attr('readonly','true');
+            $('#username').removeAttr('readonly').addClass('ziliao-username-edit');
+            $('#username').trigger('focus');
+            e.preventDefault();
+            e.stopPropagation();
+        });
+        $('#username').on('blur', function(e){
+            //后端在这增加保存用户名的操作
+            dialog.floatDivTip('保存成功');
+        })
+
+        $('body').on('click',function(e){
+            if(event.target && ['ziliao-usernamexg','username'].indexOf(event.target.id)<0){
+                $('#username,#telephone').removeClass('ziliao-username-edit').attr('readonly','true');
+            }
+        });
     },
     init:function(){
         this.bindEvent();

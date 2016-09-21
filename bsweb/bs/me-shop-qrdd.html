@@ -12,7 +12,7 @@
     <div class="nav-log"></div>
     <ul class="nav-ul">
         <li ><a href="index.html">首页</a></li>
-        <li><a href="#">全作品</a></li>
+        <li class="J-menu-all-bt"><a href="#">全作品</a></li>
         <li class="nav-ul-color"><a href="javascript:;">我</a></li>
         <li class="nav-ul-shop" id="nav-ul-shop"><b class="nav-sl">11</b><span>|</span><a href="#"><img src="images/nav-shop.png"></a>
             <ul class="nav-shopnr">
@@ -47,18 +47,18 @@
 </div>
 <div class="font-Light qrdd-list">
     <ul class="qrdd-list-ul">
-        <li><a href="me-shop-shdz.html">选择地址</a></li>
+        <li><a href="javascript:;">选择地址</a></li>
         <!--选择地址之后返回的数据-->
         <li>
-            <a href="me-shop-shdz.html" class="qrdd-list-shdz">
+            <a href="javascript:;" class="qrdd-list-shdz">
                 <h4 class="shop-shdz-add">广州广州广州广州广州广州广州广州广州州广州州广州州广州</h4>
                 <p><span>黄药师</span><span>12345678912</span></p>
             </a>
         </li>
         <!--选择地址之后返回的数据end-->
-        <li><a href="me-shop-yhj.html">优惠劵<b class="qrdd-list-b">可用1张</b></a></li>
+        <li><a href="javascript:;">优惠劵<b class="qrdd-list-b">可用1张</b></a></li>
         <!--选择优惠劵之后返回的数据-->
-        <li><a href="me-shop-yhj.html">优惠劵<b class="qrdd-list-b2">包邮卷</b></a></li>
+        <li><a href="javascript:;">优惠劵<b class="qrdd-list-b2">包邮卷</b></a></li>
         <!--选择优惠劵之后返回的数据end-->
     </ul>
 </div>
@@ -73,9 +73,81 @@
     </p>
 </div>
 <div class="shop-qrdd-btn">
-    <span class="shop-qrdd-money">￥789<b>（含运费￥20）</b></span>
+    <span class="shop-qrdd-money">￥789<b>（含运费￥20/已优惠50元）</b></span>
     <a href="#" class="qrdd-btn-btns qrdd-btn-btncolor" id="shopxd-btn">下单</a>
+</div>
+<!--收货地址页面-->
+<div class="new-addtc"  id="shdz-ym">
+    <span class="new-addtc-close"></span>
+    <div class="new-addtc-box shdz-ymbg">
+        <div class="shop-shdz-top">
+            <a href="#" class="shdz-top-cyshdz">收货地址</a>
+            <a href="javascript:;" class="shdz-top-new">新增地址</a>
+        </div>
+        <div class="shop-shdz-nr" id="addr-list">
+            <dl class="font-Light shop-shdz-xx">
+                <dt>
+                <h4 class="shop-shdz-add">广州广州广州广州广州广州广州广州广州</h4>
+                <p><span>黄药师</span><span>12345678912</span></p>
+                </dt>
+                <dd>
+                    <label for="checkbox1" addrId=""  class="shop-allselectno shop-selec shop-allselect"></label>
+                </dd>
+            </dl>
+            <dl class="font-Light shop-shdz-xx">
+                <dt>
+                <h4 class="shop-shdz-add">广州广州广州广州广州广州广州广州广州</h4>
+                <p><span>黄药师</span><span>12345678912</span></p>
+                </dt>
+                <dd>
+                    <label for="checkbox2" addrId=""  class="shop-allselectno shop-selec"></label>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<!--优惠劵-->
+<div class="new-addtc"  id="yhj-um">
+    <span class="new-addtc-close"></span>
+    <div class="new-addtc-box">
+        <div class="me-yhj">
+            <ul class="me-yhj-ul font-Light">
+                <li>
+                    <a href="#">
+                        <h5 class="me-yhj-jg">￥50</h5>
+                        <span>有效期至2017.07.21</span>
+                        <span>全场通用</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h5 class="me-yhj-jg">￥50</h5>
+                        <span>有效期至2017.07.21</span>
+                        <span>全场通用</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h5 class="me-yhj-jg">￥50</h5>
+                        <span>有效期至2017.07.21</span>
+                        <span>全场通用</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h5 class="me-yhj-jg">￥50</h5>
+                        <span>有效期至2017.07.21</span>
+                        <span>全场通用</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 </body>
 </html>
-<script src="js/top.js"></script>
+<script src="js/zepto.js"></script>
+<script src="js/showTip.js"></script>
+<script src="js/public.js"></script>
+<script src="js/addAddress.js"></script>
+<script src="js/cart.js"></script>
